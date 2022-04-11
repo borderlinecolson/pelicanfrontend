@@ -7,7 +7,11 @@ $email = test_input($_POST["email"]);
 
 $username=preg_replace("/[^A-Za-z0-9 ]/", '', $_POST["username"]);
 
+#Password
 $password=$_POST["password"];
+
+$hashedpassword = password_hash($password, PASSWORD_DEFAULT);
+#---
 
 #Check if email is valid
 
@@ -19,24 +23,18 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
 
 #Check if username is allowed
-
-
-
 foreach(file($AuthFile) as $line) {
-    $username=$line.explode(":")
-    if(strtolower($username[0])==strtolower($_POST["username"])){
+    $checkedusername=$line.explode(":")[0]
+    if(strtolower($checkedusername)==strtolower($username)){
 
     }
  } 
 #---
 
-#hash details
-$hashedpassword = password_hash($_POST["password"], PASSWORD_DEFAULT);
-#---
 
 #Put encrypted details into Logins.encrypted
 $current = file_get_contents($AuthFile);
-$current .= $email.":".$_POST["username"].":".$hashedpassword."\n";
+$current .= $email.":".$username.":".$hashedpassword."\n";
 file_put_contents($AuthFile, $current);
 #---
 
