@@ -1,5 +1,6 @@
 <?php
 
+$UserCode=00000
 
 $AuthFile="../../../../Logins.encrypted" #Where passwords are stored and HASHED
 
@@ -17,6 +18,8 @@ $hashedpassword = password_hash($password, PASSWORD_DEFAULT); #the hashed versio
 
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
   $emailErr = "Invalid email format";
+  return $emailErr;
+  break;
 }
 #---
 
@@ -26,7 +29,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 foreach(file($AuthFile) as $line) {
     $checkedusername=$line.explode(":")[0]
     if(strtolower($checkedusername)==strtolower($username)){
-
+        $UserCode+=1;
     }
  } 
 #---
@@ -34,7 +37,7 @@ foreach(file($AuthFile) as $line) {
 
 #Put encrypted details into Logins.encrypted
 $current = file_get_contents($AuthFile);
-$current .= $email.":".$username.":".$hashedpassword."\n";
+$current .= $username.":".":".$UserCode.":".$email.":".$hashedpassword."\n";
 file_put_contents($AuthFile, $current);
 #---
 
