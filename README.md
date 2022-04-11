@@ -8,3 +8,6 @@ Pelican is being written in {}
  - [ ] API
  - [ ] Login System
  - [ ] Message System
+
+
+All files in the /Pelican/ directory will be on the server. all files in the /Web/ directory will be uploaded to the internet
