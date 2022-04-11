@@ -1,16 +1,16 @@
 <?php
-$AuthFile="../../../../Logins.encrypted"
-AllowedUsernameChracters=["q","w","e",'r','t','y','u','i','o','p','a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m','1','2','3','4','5','6','7','8','9','0']
 
 
-$email = test_input($_POST["email"]);
+$AuthFile="../../../../Logins.encrypted" #Where passwords are stored and HASHED
 
-$username=preg_replace("/[^A-Za-z0-9 ]/", '', $_POST["username"]);
+$email = test_input($_POST["email"]); #The email input from the post request
+
+$username=preg_replace("/[^A-Za-z0-9 ]/", '', $_POST["username"]); #the username with non alphabet characters removed
 
 #Password
-$password=$_POST["password"];
+$password=$_POST["password"]; #the password input before being hashed
 
-$hashedpassword = password_hash($password, PASSWORD_DEFAULT);
+$hashedpassword = password_hash($password, PASSWORD_DEFAULT); #the hashed version of the password input
 #---
 
 #Check if email is valid
