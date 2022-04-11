@@ -1,4 +1,4 @@
-<php
+<?php
 
 #Check if email is valid
 
