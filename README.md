@@ -14,3 +14,4 @@ Pelican is being written with (PHP, HTML, CSS, Javascript) for the frontend and 
 
 
 All files in the /Pelican/ directory will be on the server. all files in the /Web/ directory will be uploaded to the internet
+TEST
