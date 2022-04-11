@@ -26,6 +26,26 @@ body {
   font-size: 18px;
   font-weight: bold;
   letter-spacing: 2px;
+
+  animation-name: reverse;
+  animation-duration: 0.3s;
+}
+
+.container button:hover {
+  cursor: pointer;
+  animation-name: changeColor;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes changeColor {
+  from {background-color: white; color: #292C3D; border: none;}
+  to {background-color: #292C3D; color: white; border: 2px solid white;}
+}
+
+@keyframes reverse {
+  from {background-color: #292C3D; color: white; border: 2px solid white;}
+  to {background-color: white; color: #292C3D; border: none;}
 }
 
 header {
