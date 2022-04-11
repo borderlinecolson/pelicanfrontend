@@ -13,11 +13,13 @@
 
       <div>
         <button onclick="login()">Login</button>
+        <button onclick="register()">Register</button>
       </div>
     </div>
       
     <script>
       const login = () => window.location.replace("Signin.php");
+      const regsiter = () => window.location.replace("Signup.php");
     </script>
     </body>
 </html>
