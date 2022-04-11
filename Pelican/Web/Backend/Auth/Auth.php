@@ -8,5 +8,11 @@
 
 #---
 
+#Generate auth token (Auth token regernates every login session)
+
+#---
+
+
+
 
 ?>
