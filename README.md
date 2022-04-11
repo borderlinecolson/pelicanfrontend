@@ -3,7 +3,7 @@
 # Pelican
 Pelican is a private and secure encrypted chat application ment to bring you the security of matrix with the ease of discord
 
-Pelican is being written in {}
+Pelican is being written with Web Languages for the frontend and {} for the backend
 
  - [ ] API
  - [ ] Login System
